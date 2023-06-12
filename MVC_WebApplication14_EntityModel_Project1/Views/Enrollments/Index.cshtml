@@ -1,0 +1,49 @@
+﻿@model IEnumerable<MVC_WebApplication14_EntityModel_Project1.Models.Enrollment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Enrollment List:-</h2>
+
+<p>
+    @Html.ActionLink("Add New Enrollment", "Create")
+</p>
+<table class="table">
+    <tr style="background-color:salmon">
+        <th>
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.Cname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.FirstName)
+        </th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr style="background-color:linen">
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Eid }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Eid }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Eid })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.Cname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.FirstName)
+        </td>
+
+    </tr>
+}
+
+</table>

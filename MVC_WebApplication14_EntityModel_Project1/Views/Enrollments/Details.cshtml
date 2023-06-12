@@ -1,0 +1,42 @@
+﻿@model MVC_WebApplication14_EntityModel_Project1.Models.Enrollment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Enrollment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DOA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Course.Cname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Course.Cname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Eid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<MVC_WebApplication14_EntityModel_Project1.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Course List:-</h2>
+
+<p>
+    @Html.ActionLink("Add New Course", "Create")
+</p>
+<table class="table">
+    <tr style="background-color:burlywood">
+        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr  style="background-color:lightgoldenrodyellow">
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Cid }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Cid }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Cid })
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duration)
+        </td>
+
+    </tr>
+}
+
+</table>
